@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ganjiajiat/FIT3179-Assignment-02/main/data/Melbourne_housing.csv"
+  },
+  "transform": [{"filter": "datum.BuildingArea < 1000"}],
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "BuildingArea", "type": "quantitative"},
+    "y": {"field": "Price", "type": "quantitative"},
+    "color": {"field": "Landsize", "type": "quantitative"}
+  },
+  "config": {}
+}
