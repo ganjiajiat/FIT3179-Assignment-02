@@ -10,10 +10,16 @@
 <body>
 
 <div id="vis"></div>
+<div id="vis2"></div>
 
 <script type="text/javascript">
   var spec = "js/map.json";
   vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec2 = "js/scatterplot.json";
+  vegaEmbed('#vis2', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
