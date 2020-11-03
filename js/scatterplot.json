@@ -1,15 +1,20 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
   "data": {
-    "url": "https://raw.githubusercontent.com/ganjiajiat/FIT3179-Assignment-02/main/data/Melbourne_housing.csv"
+    "url": "https://raw.githubusercontent.com/ganjiajiat/FIT3179-Assignment-02/main/data/one-star-michelin-restaurants.csv"
   },
-  "transform": [{"filter": "datum.BuildingArea < 1000"}],
-  "mark": "point",
+  "mark": "circle",
+  "transform": [
+    {"filter": "datum.year == '2019'"},
+    {"filter": "datum.price != 'N/A'"},
+    {
+      "filter": "datum.region == 'California' || datum.region == 'New York City'"
+    }
+  ],
   "encoding": {
-    "x": {"field": "BuildingArea", "type": "quantitative"},
-    "y": {"field": "Price", "type": "quantitative"},
-    "color": {"field": "Landsize", "type": "quantitative"}
+    "x": {"field": "region", "title": "Country", "type": "nominal"},
+    "y": {"field": "cuisine", "title": "Cuisine", "type": "nominal"},
+    "size": {"aggregate": "count"}
   },
   "config": {}
 }
