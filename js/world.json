@@ -17,7 +17,10 @@
         "url": "https://raw.githubusercontent.com/ganjiajiat/FIT3179-Assignment-02/main/data/one-star-michelin-restaurants.csv"
       },
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
-      "transform": [{"filter": "datum.year == '2019'"}],
+      "transform": [
+        {"filter": "datum.year == '2019'"},
+        {"filter": "datum.price != 'N/A'"}
+      ],
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},

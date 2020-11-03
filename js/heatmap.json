@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ganjiajiat/FIT3179-Assignment-02/main/data/one-star-michelin-restaurants.csv"
+  },
+  "mark": "rect",
+  "transform": [
+    {"filter": "datum.year == '2019'"},
+    {"filter": "datum.price != 'N/A'"}
+  ],
+  "encoding": {
+    "y": {"field": "region", "type": "nominal", "title": "Country"},
+    "x": {"field": "price", "type": "ordinal", "title": "Price"},
+    "color": {"aggregate": "count", "field": "price", "type": "nominal"}
+  },
+  "config": {"axis": {"grid": true, "tickBand": "extent"}}
+}
